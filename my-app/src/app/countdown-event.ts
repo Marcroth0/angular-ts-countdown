@@ -10,10 +10,10 @@ import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'ngbd-datepicker-popup',
-  templateUrl: './datepicker-popup.html',
-  styleUrls: ['./datepicker-popup.css'],
+  templateUrl: './countdown-event.html',
+  styleUrls: ['./countdown-event.css'],
   providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }]
 })
 export class NgbdDatepickerPopup { 
-    
+
 }

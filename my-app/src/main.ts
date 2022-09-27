@@ -1,12 +1,12 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import './polyfills';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-if (environment.production) {
-  enableProdMode();
-}
+import {NgbdDatepickerPopupModule} from './app/countdown-event.module';
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+platformBrowserDynamic()
+    .bootstrapModule(NgbdDatepickerPopupModule)
+    .then(ref => {
+
+    })
+    .catch(err => console.error(err));
