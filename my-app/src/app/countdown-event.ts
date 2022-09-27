@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import {
   NgbDateAdapter,
@@ -34,9 +34,18 @@ export class NgbdDatepickerPopup {
   public daysToDday: any;
   title = "Insert title";
   
+  public saveData(key: string, value: any) {
+    localStorage.setItem(key, value);
+  }
+
+  public getData(key: string): any {
+    return localStorage.getItem(key)
+  }
+
   private getTimeDifference() {
     this.dDay = this.model.getTime();
     console.log(this.dDay);
+    this.saveData("dtime", this.model)
     this.timeDifference = this.dDay - new Date().getTime();
     this.allocateTimeUnits(this.timeDifference);
   }
@@ -65,6 +74,19 @@ export class NgbdDatepickerPopup {
     );
   }
   
+  ngOnInit() {
+    const value = this.getData("title")
+    if (value) {
+      this.title = value;
+    }
+    const date = this.getData("dtime")
+    console.log(date)
+    if (date) {
+      this.model = new Date(date);
+    }
+     this.startInterval();
+  }
+
   startInterval() {
     
     this.subscription = this.timeinterval(1000).subscribe(x => {
@@ -72,5 +94,9 @@ export class NgbdDatepickerPopup {
       this.getTimeDifference();
     });
   }
-
+  
+  modelChangeFn(e: any) {
+    this.saveData("title", e.target.value);
+    this.title = this.getData("title") || "";
+  }
 }
