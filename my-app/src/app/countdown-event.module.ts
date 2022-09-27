@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdDatepickerPopup } from './countdown-event';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, NgbModule, Ng2FittextModule],
+  imports: [BrowserModule, FormsModule, NgbModule,],
   declarations: [NgbdDatepickerPopup],
   exports: [NgbdDatepickerPopup],
   bootstrap: [NgbdDatepickerPopup]

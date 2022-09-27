@@ -33,5 +33,44 @@ export class NgbdDatepickerPopup {
   public hoursToDday: any;
   public daysToDday: any;
   title = "Insert title";
+  
+  private getTimeDifference() {
+    this.dDay = this.model.getTime();
+    console.log(this.dDay);
+    this.timeDifference = this.dDay - new Date().getTime();
+    this.allocateTimeUnits(this.timeDifference);
+  }
+
+  private allocateTimeUnits(timeDifference: any) {
+    this.secondsToDday = Math.floor(
+      (timeDifference / this.milliSecondsInASecond) % this.SecondsInAMinute
+    );
+    this.minutesToDday = Math.floor(
+      (timeDifference / (this.milliSecondsInASecond * this.minutesInAnHour)) %
+        this.SecondsInAMinute
+    );
+    this.hoursToDday = Math.floor(
+      (timeDifference /
+        (this.milliSecondsInASecond *
+          this.minutesInAnHour *
+          this.SecondsInAMinute)) %
+        this.hoursInADay
+    );
+    this.daysToDday = Math.floor(
+      timeDifference /
+        (this.milliSecondsInASecond *
+          this.minutesInAnHour *
+          this.SecondsInAMinute *
+          this.hoursInADay)
+    );
+  }
+  
+  startInterval() {
+    
+    this.subscription = this.timeinterval(1000).subscribe(x => {
+      //console.log('get TD', this.timeDifference);
+      this.getTimeDifference();
+    });
+  }
 
 }
