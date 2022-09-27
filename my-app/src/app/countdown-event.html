@@ -1,21 +1,43 @@
-<section class="h-100 d-flex flex-column justify-content-center align-items-center w-100">
-    <div class="h-25 w-100">
-        <div>
-            Title
-        </div>
+<section
+  class="h-100 d-flex flex-column justify-content-center align-items-center w-100"
+>
+  <div
+    #container
+    class="h-25 w-100 font justify-content-center align-items-center d-flex"
+  >
+    <div
+      [fittext]="true"
+      [activateOnResize]="false"
+      [activateOnInputEvents]="false"
+      [container]="container"
+      [modelToWatch]="title"
+    >
+      Time to {{title}}
     </div>
-    <div>
-        <div>
-            <span>days</span>
-            <span>hours</span>
-            <span><minutes/span>
-            <span>seconds</span>
-        </div>
+  </div>
+  <div
+    #container1
+    class="w-100 h-25 align-items-center fonts font justify-content-center align-items-center d-flex"
+  >
+    <div
+      [fittext]="true"
+      [activateOnResize]="true"
+      [activateOnInputEvents]="true"
+      [container]="container1"
+      [modelToWatch]="timeDifference"
+    >
+      <span id="days"> {{daysToDday}} days, </span>
+      <span id="hours"> {{hoursToDday}}h,</span>
+      <span id="minutes"> {{minutesToDday}}m,</span>
+      <span id="seconds"> {{secondsToDday}}s</span> <br />
     </div>
-    <div class="row d-flex align-items-center align-content-center justify-content-center">
-        <div
+  </div>
+  <div
+    class="row d-flex align-items-center align-content-center justify-content-center"
+  >
+    <div
       class="group mt-5 col-12 col-sm-6 align-items-center d-flex justify-content-center"
-        >
+    >
       <form class="form-inline h-25 flex-column align-items-start">
         <div class="form-group">
             <label
@@ -35,11 +57,22 @@
         </div>
       </form>
     </div>
-        <div class="col-12 col-sm-6 align-items-center d-flex justify-content-center">
-            <form>
-                <label>title</label>
-                <input>
-            </form>
-        </div>
+    <div
+      class="group mt-5 col-12 col-sm-6 align-items-center d-flex justify-content-center"
+    >
+      <form class="form-inline h-25 flex-column align-items-start">
+        <label
+          class="col-sm-2 justify-content-start"
+          name="title"
+          ><span class="h6 small pt-1 pl-2 pr-2">Title</span></label
+        >
+        <input
+          class="form-control mt-n3"
+          [(ngModel)]="title"
+          (keyup)="modelChangeFn($event)"
+          name="title"
+        />
+      </form>
     </div>
+  </div>
 </section>
