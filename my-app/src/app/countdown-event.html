@@ -40,20 +40,18 @@
     >
       <form class="form-inline h-25 flex-column align-items-start">
         <div class="form-group">
-            <label
-              name="dp"
-              class="col-sm-2 justify-content-start"
-              ><span class="h6 small pt-1 pl-2 pr-2">Date</span></label
-            >
-            <input
-              class="form-control mt-n3"
-              placeholder="date"
-              name="dp"
-              [(ngModel)]="model"
-              ngbDatepicker
-              #d="ngbDatepicker"
-              (click)="d.toggle()"
-            />
+          <label name="dp" class="col-sm-2 justify-content-start"
+            ><span class="h6 small pt-1 pl-2 pr-2">Date</span></label
+          >
+          <input
+            class="form-control mt-n3"
+            placeholder="date"
+            name="dp"
+            [(ngModel)]="model"
+            ngbDatepicker
+            #d="ngbDatepicker"
+            (click)="d.toggle()"
+          />
         </div>
       </form>
     </div>
@@ -61,9 +59,7 @@
       class="group mt-5 col-12 col-sm-6 align-items-center d-flex justify-content-center"
     >
       <form class="form-inline h-25 flex-column align-items-start">
-        <label
-          class="col-sm-2 justify-content-start"
-          name="title"
+        <label class="col-sm-2 justify-content-start" name="title"
           ><span class="h6 small pt-1 pl-2 pr-2">Title</span></label
         >
         <input
