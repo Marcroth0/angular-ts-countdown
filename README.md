@@ -4,6 +4,8 @@ A Countdown app built in Typescript using the Angular framework, deployed with N
 
 Live Site: https://ang-ts-countdown.netlify.app
 
+![Demo](demo-image/demo-image.png)
+
 <hr>
 
 ## System:
