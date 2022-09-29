@@ -13,7 +13,6 @@ Live Site: https://ang-ts-countdown.netlify.app
 - Node version v18.8.0
 - npm version 8.18.0
 
-<hr>
 
 ## Repo structure:
 
@@ -88,13 +87,10 @@ import {Ng2FittextModule} from "ng2-fittext";
 <div [fittext]="true" [activateOnResize]="true" [container]="container">Bla bla bla...</div>
 
 ```
-<hr>
 
 ## Local Storage
 
 Loss of input data is prevented by using Angular Local Storage. 
-
-<hr>
 
 ## Deployment
 
