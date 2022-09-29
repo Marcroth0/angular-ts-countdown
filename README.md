@@ -58,7 +58,6 @@ Installing Angular Bootstrap:
 
 Being able to quickly structure and setup the html [Bootstrap](https://getbootstrap.com/docs/4.5/getting-started/introduction/) version 4.5.3 was used. 
 
-<hr>
 
 ## Fittext
 
